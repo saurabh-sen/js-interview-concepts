@@ -10,6 +10,8 @@
 // }
 // funcExp();
 
+// // diff b/w function statement and function expression is that, function statement can be call before initialization but in function expression we can't call it
+
 // // first class functions :- function which can be treated as variable(passing func as argument or return them as a value) is called first class functions
 // function sq(num){
 //     return num*num;
@@ -70,3 +72,17 @@
 // console.log(sum(2, 3, 4, 5, 6));
 // 20
 
+
+
+// trying function hoisting
+
+// behaves normally
+func();
+function func(){
+    console.log("hello");
+}
+// behaves as let var const
+funcExp();
+let funcExp = function (){
+    console.log("hello");
+}

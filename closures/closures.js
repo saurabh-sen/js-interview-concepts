@@ -2,12 +2,10 @@
 // (function fn() {
 //     if(count===0){
 //         let count = 1;
-//         console.log(count);
+//         console.log(count); // 1
 //     }
-//     console.log(count);
-
+//     console.log(count); // 0
 // })();
-
 // // 1 0
 
 // // write a function that would allow you to do this
@@ -65,13 +63,12 @@
 // }
 // // 0 1 2;
 
-// // how would you use closure to create a private counter /
+// // how would you use closure to create a private counter
 // function counter(){
 //     let _counter = 0;
 //     function add(i) {
 //         _counter += i;
 //     }
-
 //     function retrive(){
 //         return "Counter value is: "+_counter;
 //     }

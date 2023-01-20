@@ -1,4 +1,4 @@
-// an object is collection of properties and a properties have name/key and values, values can have functions which is known as methods.
+// ? an object is collection of properties and a properties have name/key and values, values can have functions which is known as methods.
 
 // const func = (function (a){
 //     delete a; // it will only works on object
@@ -10,7 +10,7 @@
 
 // let arr = ['sdf', 'asf'];
 // delete arr[1]; // it works with arr but doesn't affect array's length
-// console.log(arr)
+// console.log(arr) // [ 'sdf', <1 empty item> ]
 
 // let obj = {
 //     name : "hello",
@@ -109,7 +109,7 @@
 //     health: 90
 // };
 // const data = JSON.stringify(setting, ["level", "health"]);
-// console.log(data); // {"level":19,"health":90}
+// console.log(data); // '{"level":19,"health":90}'
 
 // ? o/p
 // window.radius = 10;
@@ -192,4 +192,33 @@
 // multiply(value) // 20
 // multiply(value) // 40
 
-// many more
+// ? o/p
+// function changeAge(person){
+//     person.age = 25;
+//     person = {
+//         name: "john",
+//         age:50
+//     }
+//     return person;
+// }
+// const personObj1 = {
+//     name: "Alex",
+//     age: 30
+// }
+// const personObj2 = changeAge(personObj1);
+// console.log(personObj1) // { name: 'Alex', age: 25 }
+// console.log(personObj2) // { name: 'john', age: 50 }
+
+// ! shallow copy and deep copy of an object
+// shallow copy is when we just give reference of object to another object.
+// deep copy is when clone the whole object
+// let user = {
+//     name: "hello",
+//     age: 32
+// };
+// let clonedObj = Object.assign({}, user); // one way
+// let clonedObj = JSON.parse(JSON.stringify(user)) // two way
+// let clonedObj = {...user} // three way
+// clonedObj.name = "meow";
+// console.log(user);
+// console.log(clonedObj)

@@ -63,9 +63,7 @@
 //         return 10;
 //     }
 // }
-
-// console.log(getrate());
-
+// console.log(getrate()); // 6
 
 // // infinite currying sum(3)(4)....(n)
 // function sum(a){

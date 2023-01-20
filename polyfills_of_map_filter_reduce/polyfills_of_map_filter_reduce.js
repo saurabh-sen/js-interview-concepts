@@ -6,7 +6,7 @@
 //   }
 //   return temp;
 // };
-// let result = obj.myFilter((item, i, a)=> {
+// let result = arr.myFilter((item, i, a)=> {
 //    return item.id > 1;
 //   })
 // console.log(result)

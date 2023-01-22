@@ -57,7 +57,7 @@
 // var rate =10;
 // function getrate(){
 //     if(rate == undefined){
-//         var rate = 6;
+//         var rate = 6; // var is function scoped and hoisted in that scope here.
 //         return rate;
 //     }else{
 //         return 10;

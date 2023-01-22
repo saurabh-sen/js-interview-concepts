@@ -73,7 +73,6 @@
 // a[c] = 456; // a["[object object]"]
 // console.log(a[b]);
 
-
 // ? difference between JSON.stringify and JSON.parse
 // stringify converts obj to string
 // parse converts str to obj
@@ -112,16 +111,16 @@
 // console.log(data); // '{"level":19,"health":90}'
 
 // ? o/p
-// window.radius = 10;
+// window.radius = 30;
 // const shape = {
 //     radius: 10,
 //     diameter(){
 //         return this.radius*2; // this here points to scope object
 //     },
-//     perimeter: () => 2* this.radius, // this in arrow function points to window object
+//     perimeter: () => 2* this.radius, // this in arrow function points to window object here
 // };
-// console.log(shape.diameter());
-// console.log(shape.perimeter());
+// console.log(shape.diameter()); // 20
+// console.log(shape.perimeter()); // 60
 
 // ? what is destructing in objects and renaming destructured value ?
 // taking out the property from an object
@@ -130,8 +129,8 @@
 //     age: 23
 // };
 // const name = "saurabh"
-// const { name:myObjName } = user;
-// console.log(myObjName, name); // hello saurabh
+// const { name:myObjName } = user; // ! renaming
+// console.log(myObjName, name); // ! hello saurabh
 
 // ? nested destructing of objects
 // let user = {
@@ -142,7 +141,6 @@
 //         last: "sen",
 //     }
 // };
-
 // const { name, age, obj: {first, last} } = user;
 // console.log(first, last); // saurabh sen
 // array destructuring
@@ -161,7 +159,7 @@
 //     greeting : "hey"
 // };
 // let d;
-// d=c; // objects are pass and copied by reference
+// d=c; // objects are pass and copied by reference // ! shallow copy
 // c.greeting = "hello"
 // console.log(d.greeting); // hello
 
@@ -171,7 +169,7 @@
 
 // ? o/p
 // let obj1 = {a:1};
-// let obj2 = obj1;
+// let obj2 = obj1; // ! shallow copy
 // console.log(obj1 == obj2) // true
 // console.log(obj1 === obj2) // true
 
@@ -216,9 +214,9 @@
 //     name: "hello",
 //     age: 32
 // };
-// let clonedObj = Object.assign({}, user); // one way
-// let clonedObj = JSON.parse(JSON.stringify(user)) // two way
-// let clonedObj = {...user} // three way
+// let clonedObj = Object.assign({}, user); // ! one way
+// let clonedObj = JSON.parse(JSON.stringify(user)) // ! two way
+// let clonedObj = {...user} // ! three way
 // clonedObj.name = "meow";
 // console.log(user);
 // console.log(clonedObj)

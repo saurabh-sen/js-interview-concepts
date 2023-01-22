@@ -72,7 +72,6 @@
 //     function retrive(){
 //         return "Counter value is: "+_counter;
 //     }
-
 //     return { add, retrive };
 // }
 // const { add, retrive } = counter();

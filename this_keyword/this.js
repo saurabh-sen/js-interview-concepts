@@ -20,23 +20,23 @@
 // }
 // get1(); // 8
 
-// // ? o/p
+// ? o/p
 // let user = {
 //     name : 'hello',
 //     age: 24,
 //     getDetails(){
-//         console.log(this.name); // this is pointing to the parent object(user)
+//         console.log(this.name); // ! this is pointing to the parent object(user)
 //     }
 // };
 // user.getDetails();
 
 // ? o/p
-// this.name = 'meow' // this is kind of similar to the window.name='meow'
+// this.name = 'meow' // ! this is kind of similar to the window.name='meow'
 // let user = {
 //     name : 'hello',
 //     age: 24,
 //     getDetails : () => {
-//         console.log(this.name); // this is pointing to the window object(this/window)
+//         console.log(this.name); // ! this is pointing to the global object(this/window)
 //     }
 // };
 // user.getDetails();
@@ -46,18 +46,18 @@
 //   name: "hello",
 //   age: 24,
 //   getDetails: () => {
-//     console.log(this.name); // undefined // this is pointing to the window object(this/window)
+//     console.log(this.name); // undefined // ! this is pointing to the window object(this/window)
 //   },
 //   nestedObj:{
 //     first: "saurabh",
 //     last: "sen",
 //     getName(){
 //         console.log(this.first) // saurabh
-//         console.log(this.name) // undefined // pointing to immediate parent only
+//         console.log(this.name) // undefined // ! pointing to immediate parent only
 //     },
 //     getParentName : () => {
-//         console.log(this.first) // undefined // pointing to global object
-//         console.log(this.name) // undefined // pointing to global object
+//         console.log(this.first) // undefined // ! pointing to global object
+//         console.log(this.name) // undefined // ! pointing to global object
 //     }
 //   }
 // };
@@ -70,7 +70,7 @@
 //     name: 'hello',
 //     age: 24,
 //     getName(){
-//         const arrowfunc = () => console.log(this.name);
+//         const arrowfunc = () => console.log(this.name); // ! hello
 //         arrowfunc();
 //     }
 // }
@@ -82,7 +82,7 @@
 //         this.name = n;
 //     }
 //     getName(){
-//         console.log(this.name); // this will point to the all variables and methods associated with constructor
+//         console.log(this.name); // ! this will point to the all variables and methods associated with constructor
 //     }
 // };
 // let userObj = new user("hello");
@@ -94,7 +94,7 @@
 //     first: 'hello',
 //     getName(){
 //         const first = 'meow'
-//         return this.first // hello // point to the immediate parent object
+//         return this.first // hello // ! point to the immediate parent object
 //     }
 // }
 // console.log(user.getName())
@@ -103,7 +103,7 @@
 // function makeUser(){
 //     return {
 //         name: 'john',
-//         ref: this, // point to the global object
+//         ref: this, // ! point to the global object
 //     }
 // }
 // let user = makeUser();
@@ -115,7 +115,7 @@
 //         name: 'john',
 //         ref(){
 //             return this
-//         }, // point to the parent object
+//         }, // ! point to the parent object
 //     }
 // }
 // let user = makeUser();
@@ -128,7 +128,7 @@
 //         console.log(this.name);
 //     }
 // };
-// setTimeout(user.logMsg, 1000); // undefined // this will store the copy of function and call it without binding it to the user object.
+// setTimeout(user.logMsg, 1000); // undefined // ! this will store the copy of function and call it without binding it to the user object.
 // ? fixing the above problem
 // const user = {
 //     name: "hello",
@@ -136,7 +136,7 @@
 //         console.log(this.name);
 //     }
 // };
-// setTimeout(() => user.logMsg(), 1000); // undefined // this will  call it.
+// setTimeout(() => user.logMsg(), 1000); // undefined // ! this will  call it.
 
 // ? interview questions o/p
 // const user = {
@@ -145,11 +145,12 @@
 //         return `hello, ${this.name}`;
 //     },
 //     farewell: () => {
-//         return `goodbye, ${this.name}`; // point to the parent function object(not present here) or global object
+//         return `goodbye, ${this.name}`; // ! point to the parent function object(not present here) or global object
 //     },
 // }
 // console.log(user.greet()) // hello
-// console.log(user.farewell()) // undefined // pointing to the global object
+// console.log(user.farewell()) // undefined // ! pointing to the global object
+
 // ? fixing above code
 // const user = {
 //   name: "saurabh",
@@ -157,7 +158,7 @@
 //     return `hello, ${this.name}`;
 //   },
 //   farewellObj() {
-//     const farewell = () => `goodbye, ${this.name}`; // point to the parent function object(present here) or global object.
+//     const farewell = () => `goodbye, ${this.name}`; // ! point to the parent function object(present here) or global object.
 //     return farewell();
 //   },
 // };

@@ -1,0 +1,33 @@
+body * {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid pink;
+}
+.div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 40px;
+}
+span{
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.modal_container{
+    display: none;
+    position: absolute;
+    top: 0;
+    background-color: rgba(128, 128, 128, 0.825);
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.modal {
+    width: 500px;
+    height: 400px;
+    background-color: white;
+    
+}

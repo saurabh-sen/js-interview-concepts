@@ -63,7 +63,8 @@
 //         return 10;
 //     }
 // }
-// console.log(getrate()); // 6
+// console.log(getrate());
+// console.log(rate)
 
 // // infinite currying sum(3)(4)....(n)
 // function sum(a){
@@ -79,7 +80,7 @@
 
 
 // // partial function and currying
-// partial application transforms one function into another function with some arity
+// partial application transforms one function into another function with some arity(the number of formal parameters it has)
 // function sum(a){
 //     return function(b, c){
 //         return a+b+c;
@@ -99,8 +100,6 @@
 // // write a curry function which takes argument like sum(a, b, c) to sum(a)(b)(c)
 // function curry(func){
 //     return function curriedFunc(...args){
-//         console.log(args.length);
-//         console.log(func.length);
 //         if(args.length >= func.length)return func(...args)
 //         else return function(...next){
 //             return curriedFunc(...args, ...next);

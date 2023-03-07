@@ -217,6 +217,7 @@
 // let clonedObj = Object.assign({}, user); // ! one way
 // let clonedObj = JSON.parse(JSON.stringify(user)) // ! two way
 // let clonedObj = {...user} // ! three way
+// let clonedObj = structuredClone(user); // ! fourth way
 // clonedObj.name = "meow";
 // console.log(user);
 // console.log(clonedObj)

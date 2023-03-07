@@ -11,7 +11,7 @@
 // function get(){
 //     console.log(this.a);
 // }
-// get(); // 8
+// get();
 
 // ? o/p
 // this.a = 8;
@@ -104,10 +104,13 @@
 //     return {
 //         name: 'john',
 //         ref: this, // ! point to the global object
+//         refName: this.name, // ! point to the global object
 //     }
 // }
 // let user = makeUser();
-// console.log(user.ref.name); // undefined
+// console.log(user.ref.name); // undefined ""
+// console.log(user.ref); // window
+// console.log(user.refName); // undefined ""
 
 // ? fix the above problem
 // function makeUser(){
@@ -136,7 +139,7 @@
 //         console.log(this.name);
 //     }
 // };
-// setTimeout(() => user.logMsg(), 1000); // undefined // ! this will  call it.
+// setTimeout(() => user.logMsg(), 1000); // hello // ! this will  call it.
 
 // ? interview questions o/p
 // const user = {
@@ -148,7 +151,7 @@
 //         return `goodbye, ${this.name}`; // ! point to the parent function object(not present here) or global object
 //     },
 // }
-// console.log(user.greet()) // hello
+// console.log(user.greet()) // hello saurabh
 // console.log(user.farewell()) // undefined // ! pointing to the global object
 
 // ? fixing above code
@@ -183,6 +186,7 @@
 // console.log(cal.mul())
 
 // ? interview questions o/p
+// ! tricky
 // var length = 4;
 // function callback(){
 //     console.log(this.length);
@@ -195,15 +199,17 @@
 // }
 // object.method(callback) // 4
 
-//let length = 4; // while using let it prints 0 to the console
-// var length = 4; // while using var it prints 4 to the console
+// let length = 4; // this can only be accessed in script object
+// // var length = 4; // this can be accessed by global/window object.
 // const object = {
 //     length: 5,
 //     method(){
 //         function callback(){
-//             console.log(this.length); // prints 4, why it should print 5
+//             console.log(this.length); // ! this pointing here to the global object since it doesnot have any immediate parent object.
 //         }
 //         callback()
 //     }
 // }
 // object.method()
+// ! MOST IMPORTANT:- we have a length property in window object which has value 0 (console.log(length) -> 0)
+// ! console.log(l) -> undefined error

@@ -1,6 +1,9 @@
 // ! call apply and bind are used to set the "this" keyword independent of how the function is called.
 // ! we can use these methods to tie a function to a object and call the function as if it belongs to that object.
 
+// ? bind chaining doesnot exist.
+// ? if we pass null as an object to the call, bind, apply then it will bind it with global object not with null.
+
 // ? what is call?
 // ! call method is used to tie a function to a obj 
 // var obj = {
@@ -47,7 +50,7 @@
 // let bindedFunc = bindFunc.bind(obj);
 // bindedFunc(20, "software developer") // ! saurabh 20 software developer
 // let bindedFunc1 = bindFunc.bind(obj, 21, "sde1");
-// bindedFunc1(22, "sde2") // ! saurabh 20 software developer
+// bindedFunc1(22, "sde2") // ! saurabh 21 sde1
 
 // ? o/p
 // const person = { name: "saurabh" };
@@ -89,9 +92,12 @@
 // var status = "😎";
 // setTimeout(() => {
 //     const status = "😍";
-//     const data = {status : "🐍",getStatus(){
+//     const data = {
+//         status : "🐍",
+//         getStatus(){
 //             return this.status;
-//         },}
+//         },
+//     };
 //     console.log(data.getStatus());  // ! 🐍
 //     console.log(data.getStatus.call(this)); // ! 😎 // this is pointing to the object of the settimeout function in which there exists a status 😎.
 // }, 0);

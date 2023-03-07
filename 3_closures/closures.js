@@ -1,12 +1,14 @@
+// what is closures?
+// ! A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment).
+
 // let count =0;
 // (function fn() {
 //     if(count===0){
 //         let count = 1;
-//         console.log(count); // 1
+//         console.log(count);
 //     }
-//     console.log(count); // 0
+//     console.log(count);
 // })();
-// // 1 0
 
 // // write a function that would allow you to do this
 // function createBase(a){

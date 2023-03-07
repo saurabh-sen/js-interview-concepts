@@ -1,10 +1,12 @@
 // // function defination/declaration/statements
+// ! function declaration means defining a function using normal function syntax.
 // function name() {
 //     console.log('hello');
 // }
 // name();
 
 //  // function expression :- function assigned to a variable is called as function expression
+// ! the TDZ is: the term to describe the state where variables are un-reachable. They are in scope, but they aren't declared.
 // const funcExp = function () {
 //     console.log('hello');
 // }
@@ -33,16 +35,15 @@
 //         console.log(x);
 //     })(2);
 // })(1)
-// // 1
 
-// // hoisting
+// // hoisting 
+// ! tricky
 // var x =21;
 // var fun = function (){
-//     console.log(x); // undefined
+//     console.log(x); 
 //     var x =20;
 // }
 // fun();
-// // undefined
 
 // // rest operator & spread operator
 // const a = (b, c, ...rest) => {
@@ -73,14 +74,14 @@
 // 20
 
 
-// trying function hoisting
-
-// behaves normally
+// // trying function hoisting
+// ! behaves normally
 // func();
 // function func(){
 //     console.log("hello");
 // }
-// behaves as let var const
+
+// ! behaves as let var const
 // funcExp();
 // let funcExp = function (){
 //     console.log("hello");

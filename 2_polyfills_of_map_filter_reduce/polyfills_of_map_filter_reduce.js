@@ -46,14 +46,14 @@
 //     { name: 'dilpreet', age:7, marks:55},
 // ];
 
-// let ans = students.map((item)=> item.name.toLocaleUpperCase())
+// let ans = students.map((item)=> item.name.toUpperCase())
 // console.log(ans);
 
 // // Output based questions 
 // // Return only details of those wo scored more than 60marks
 // let students = [
 //     { name: "piyush", age : 31, marks: 80},
-//     { name: 'jenny', age:15, marks:69},
+//     { name: 'jenny', age:15, marks:69},q
 //     { name: 'kaushal', age:16, marks:35},
 //     { name: 'dilpreet', age:7, marks:55},
 // ];
@@ -106,5 +106,8 @@
 //     { name: 'dilpreet', age:7, marks:55},
 // ];
 
-// let ans = students.filter((item)=> item.marks >= 60).map((item) => item.name);
+// let ans = students.map((item)=> {
+//     if(item.marks <= 60)return item.marks+=20;
+//     return item.marks;
+// }).filter((item) => item > 60).reduce((ac, cu) => ac+cu, 0);
 // console.log(ans);

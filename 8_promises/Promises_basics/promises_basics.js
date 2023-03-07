@@ -277,7 +277,7 @@
 // ] */
 // console.log("stop");
 
-// ! Promise.any :- this returns an value of first promise resolved or if all the promises got rejected then it will throw error saying all rejected
+// ! Promise.any :- this returns first promise resolved or if all the promises got rejected then it will throw error saying all rejected
 // console.log("start");
 // function func1(fname) {
 //   return new Promise((resolve, reject) => {
@@ -290,7 +290,7 @@
 //   return new Promise((resolve, reject) => {
 //     setTimeout(() => {
 //       resolve(`last name ${lname}`);
-//     }, 100);
+//     }, 1000);
 //   });
 // }
 // function func3(profession) {
@@ -358,7 +358,5 @@
 //     }
 // }
 // result()
-// /* start
-// stop
-// first name saurabh */
+// /* start, stop, first name saurabh, last name sen, profession sde, something idk */
 // console.log("stop");

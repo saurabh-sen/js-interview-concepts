@@ -195,7 +195,7 @@ let count = 0;
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: B
+#### Answer: C
 
 </p>
 </details>

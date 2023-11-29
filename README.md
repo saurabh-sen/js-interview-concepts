@@ -322,12 +322,12 @@ display(23, 3, 4, 7, 8);
 
 ```javascript
 function display(...nums) {
-  let ans = 0';
+  let ans = 0;
   for(const i of nums)ans += i;
   return ans;
 }
 
-console.log(display(1, 2, 3, 4, 5);
+console.log(display(1, 2, 3, 4, 5));
 ```
 
 - A: `0`

@@ -402,17 +402,28 @@ console.log(ans);  // [3, 4]
 <p>
 
 ```javascript
-const arr = [1, 2, 3, 4];
-Array.prototype.myReduce = function(callback, initialValue){
-  let accumulator = initialValue;
-  for(let i=0;i<this.length;++i){
-    accumulator = accumulator ? callback(accumulator, this[i], i, this)) : this[i];
+Array.prototype.myReduce = function(callback, initialVal) {
+  if (!this) throw new Error("myReduce is called on null or undefined");
+  if (typeof callback !== 'function') throw new Error("callback is not a function");
+  let len = this.length,
+    k = 0,
+    value = undefined;
+  if (initialVal !== undefined) value = initialVal;
+  else {
+    while(k<len && !(k in this)){
+    	k++;
+    }
+    if(k >= len)throw new Error("reduce is called on empty array with no initial value")
+    value = this[k++];
   }
-  return accumulator;
+  for (; k < len; ++k) {
+    value = callback(value, this[k], k, this);
+  }
+  return value;
 }
+const arr = [1, 2, 3, 4];
+console.log(arr.myReduce((acc, cur, ind, arr) => acc + cur, 0)); // 15
 
-const ans = arr.myReduce((acc, cur, index, ar) => acc+cur, 0);
-console.log(ans);  // 10
 ```
 
 </p>
